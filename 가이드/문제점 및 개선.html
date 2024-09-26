@@ -1,0 +1,218 @@
+<!-- 24.08.15,17  -->
+<!-- 마지막 썸네일 이후에 사진이 이어져서 안나오며, 썸네일 사진이 두번째 사진처럼 레이아웃에 걸쳐서 보이는 문제 수정  -->
+
+
+
+
+
+
+<!-- ------------------------------------------------------------------- -->
+
+
+
+
+
+<!-- 하단 복붙 밑 해설 작업 완료 -->
+<!-- ----------------------------------------------------------- -->
+<!-- 팝업 이벤트 개선 -->
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <!-- 기존 head 내용 -->
+    <style>
+      /* 기존 CSS 내용 */
+
+      /* 팝업 스타일 */
+      .popup {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        justify-content: center;
+        align-items: center;
+      }
+
+      .popup-content {
+        background-color: white;
+        padding: 20px;
+        border-radius: 10px;
+        text-align: center;
+      }
+
+      /* 편집 가능한 컨텐츠 스타일 */
+      .editable {
+        cursor: pointer;
+      }
+
+      .editable:hover {
+        background-color: #f0f0f0;
+      }
+
+      /* 이미지 스타일 */
+      .profile-image,
+      .pet-image {
+        cursor: pointer;
+        transition: transform 0.3s ease;
+      }
+
+      .profile-image:hover,
+      .pet-image:hover {
+        transform: scale(1.1);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 기존 body 내용 -->
+    <section class="profile-section">
+      <h3>내 정보</h3>
+      <img
+        src="images/마이페이지/profile-2398782_1920.png"
+        alt="profile-image"
+        class="profile-image"
+        id="profileImage"
+      />
+      <p class="editable">
+        <strong>이름: </strong><span class="editable-content">홍길동</span>
+      </p>
+      <p class="editable">
+        <strong>이메일: </strong
+        ><span class="editable-content">user@example.com</span>
+      </p>
+      <p class="non-editable">
+        <strong>가입일: </strong><span>2024년 8월 10일</span>
+      </p>
+    </section>
+    <section class="pet-section">
+      <h3>내 새꾸</h3>
+      <div class="pet-images">
+        <img
+          src="images/dochi/KakaoTalk_20240809_114425089_01.jpg"
+          alt="pet-image"
+          class="pet-image"
+          id="petImage"
+        />
+      </div>
+      <div class="pet-card">
+        <h3 class="editable">
+          <span class="editable-content">댕댕이 or 냥냥이</span>
+        </h3>
+        <p class="editable">
+          <strong>종류: </strong><span class="editable-content">댕댕이</span>
+        </p>
+        <p class="editable">
+          <strong>나이: </strong><span class="editable-content">2살</span>
+        </p>
+      </div>
+    </section>
+
+    <!-- 이미지 편집 팝업 -->
+    <div id="imageEditPopup" class="popup">
+      <div class="popup-content">
+        <h3 id="popupTitle"></h3>
+        <button id="uploadBtn">이미지 업로드</button>
+        <button id="defaultBtn">기본 이미지로 변경</button>
+        <button id="closeBtn">닫기</button>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const profileImage = document.getElementById("profileImage");
+        const petImage = document.getElementById("petImage");
+        const popup = document.getElementById("imageEditPopup");
+        const popupTitle = document.getElementById("popupTitle");
+        const uploadBtn = document.getElementById("uploadBtn");
+        const defaultBtn = document.getElementById("defaultBtn");
+        const closeBtn = document.getElementById("closeBtn");
+        const editableContents = document.querySelectorAll(".editable-content");
+
+        let currentImage = null;
+
+        function openPopup(image, title) {
+          currentImage = image;
+          popupTitle.textContent = title + " 이미지 편집";
+          popup.style.display = "flex";
+        }
+
+        function closePopup() {
+          popup.style.display = "none";
+        }
+
+        profileImage.addEventListener("click", () =>
+          openPopup(profileImage, "프로필")
+        );
+        petImage.addEventListener("click", () =>
+          openPopup(petImage, "반려동물")
+        );
+
+        uploadBtn.addEventListener("click", function () {
+          const input = document.createElement("input");
+          input.type = "file";
+          input.accept = "image/*";
+          input.onchange = function (event) {
+            const file = event.target.files[0];
+            const reader = new FileReader();
+            reader.onload = function (e) {
+              currentImage.src = e.target.result;
+              closePopup();
+            };
+            reader.readAsDataURL(file);
+          };
+          input.click();
+        });
+
+        defaultBtn.addEventListener("click", function () {
+          const defaultImagePath =
+            currentImage === profileImage
+              ? "images/마이페이지/profile-2398782_1920.png"
+              : "images/dochi/KakaoTalk_20240809_114425089_01.jpg";
+          currentImage.src = defaultImagePath;
+          closePopup();
+        });
+
+        closeBtn.addEventListener("click", closePopup);
+
+        // 텍스트 내용 편집 기능
+        editableContents.forEach((content) => {
+          content.addEventListener("click", function () {
+            const text = this.textContent;
+            const input = document.createElement("input");
+            input.value = text;
+            this.textContent = "";
+            this.appendChild(input);
+            input.focus();
+
+            input.addEventListener("blur", function () {
+              content.textContent = this.value;
+            });
+
+            input.addEventListener("keypress", function (e) {
+              if (e.key === "Enter") {
+                content.textContent = this.value;
+              }
+            });
+          });
+        });
+
+        // D-day 카운트 함수
+        function updateDDayCount() {
+          const joinDate = new Date("2024-08-10");
+          const today = new Date();
+          const difference = Math.floor(
+            (today - joinDate) / (1000 * 60 * 60 * 24)
+          );
+          const dDayElement = document.getElementById("dayCount");
+          if (dDayElement) {
+            dDayElement.textContent = difference;
+          }
+        }
+
+        updateDDayCount();
+      });
+    </script>
+  </body>
+</html>
+<!-- 상단 복붙 밑 해설 작업 완료 -->

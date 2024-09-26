@@ -1,0 +1,96 @@
+/* 슬라이드 관련 */
+/* 슬라이드 섹션 */
+#slideArea {
+  border: 1rem solid #f00;
+  margin: auto;
+  position: relative;
+}
+
+#slideArea h2 {
+  display: none;
+}
+
+#slideArea img {
+  display: block;
+  max-width: 100%;
+}
+
+#slideAA {
+  width: 70%;
+  margin: auto;
+  border-top: 10px solid #00f;
+  overflow: hidden;
+}
+
+#slide {
+  display: flex;
+  position: relative;
+  left: 70vw;
+}
+
+#slide div {
+  position: relative;
+  border-bottom: 10px solid #000;
+}
+
+#slide div img {
+  position: relative;
+}
+
+#slide div img:nth-child(1) {
+  width: 40%;
+  top: 0;
+  left: 0;
+}
+
+#slide div img:nth-child(2) {
+  position: absolute;
+  top: 5%;
+  right: 0;
+  width: 50%;
+}
+
+#slide div img:nth-child(3) {
+  position: absolute;
+  width: 30%;
+  top: 60%;
+  left: 60%;
+}
+
+#slide div img:nth-child(4) {
+  width: 40%;
+  top: -30%;
+  left: 10%;
+}
+
+/* -------------------------------------------- */
+#slideArea {
+  position: relative;
+  width: 400vw;
+}
+#slide {
+  display: flex;
+  width: 100vw;
+  left: 0;
+  position: relative;
+}
+#slideSection {
+  overflow: hidden;
+}
+
+#slideArea h2 {
+  position: absolute;
+  top: 30%;
+  left: 25%;
+  background: rgba(255, 255, 255, 0.85);
+  z-index: 1;
+  padding: 50px 100px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px black;
+}
+#slide img {
+  display: block;
+  width: 100%;
+}
+
+/* -------------------------------------------- */

@@ -1,0 +1,249 @@
+<!-- 24.08.10  -->
+<!-- 완료가 아님-->
+<!-- 24.08.17 -->
+<!-- 찐 완료 -->
+<!-- 24.08.21 js 오류 발생 -->
+
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Diphylleia&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <!-- 글쓰기 아이콘 -->
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <!-- 로고 클릭시 발생할 아이콘 -->
+  <!-- 산책로 아이콘 -->
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <!-- 커뮤니티 아이콘 -->
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined1:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <!-- 함께 서비스 아이콘 -->
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <!-- 병원 아이콘 -->
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <!-- 위치 아이콘 -->
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <!-- 보호자 아이콘 -->
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <!-- 펫택시 아이콘 -->
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <!-- 반려동물 용품 아이콘-->
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <!-- 입양 및 분양 아이콘-->
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <!-- <link rel="stylesheet" href="slider_font.css" /> -->
+  <link rel="stylesheet" href="mediaQuery.css" />
+  <link rel="stylesheet" href="animation.css" />
+  <link rel="stylesheet" href="petHealth.css" />
+  <link rel="stylesheet" href="pet.css" />
+  <link rel="stylesheet" href="menuToggle.css" />
+
+  <title>댕댕이의 냥</title>
+</head>
+
+<body>
+  <header>
+    <!-- 메뉴 토글 아이콘 -->
+    <div id="menuSection">
+      <button id="menu_Toggle">
+        <i class="fas fa-bars" id="menuIcon"></i>
+      </button>
+    </div>
+    <h1 id="mainlogo" class="slide-fwd-center">
+      <a href="index.html">댕댕이의 냥</a>
+    </h1>
+    <div class="header-right">
+      <a href="login.html" id="dDayLink">
+        <div id="dDay">
+          D+<span id="dayCount">0</span><span id="day"> DAY</span>
+        </div>
+        <span id="myPageText">마이페이지</span>
+      </a>
+      <i class="fas fa-question-circle" id="helpIcon" title="도움말"></i>
+      <div class="tooltip">클릭하여 마이페이지로 이동</div>
+    </div>
+  </header>
+
+  <main>
+    <div class="content_wrapper">
+      <nav id="left_Menu">
+        <ul>
+          <!-- 정보 앞에 아이콘 표시하기 -->
+          <li>
+            <span class="material-symbols-outlined" id="homeIcon">
+              home
+            </span>
+            <a href="index.html" id="home">홈으로</a>
+          </li>
+          <li>
+            <span class="material-symbols-outlined" id="trailIcon">
+              hiking
+            </span>
+            <a href="#" id="trail">산책로</a>
+          </li>
+          <li>
+            <span class="material-symbols-outlined" id="communityIcon">
+              forum
+            </span>
+            <a href="#" id="community">커뮤니티</a>
+          </li>
+          <li>
+            <span class="material-symbols-outlined" id="togetherIcon">
+              pets
+            </span>
+            <a href="#" id="together">함께 서비스</a>
+          </li>
+          <li>
+            <span class="material-symbols-outlined" id="hosoitalIcon">
+              medication
+            </span>
+            <a href="#" id="hosoital">병원</a>
+          </li>
+          <li>
+            <span class="material-symbols-outlined" id="locationIcon">
+              explore
+            </span>
+            <a href="#" id="location">위치</a>
+          </li>
+          <li>
+            <span class="material-symbols-outlined" id="parentsIcon">
+              phone_in_talk
+            </span>
+            <a href="#" id="parents">보호자</a>
+          </li>
+          <li>
+            <span class="material-symbols-outlined" id="pettaxiIcon">
+              local_taxi
+            </span>
+            <a href="#" id="pettaxi">펫택시</a>
+          </li>
+          <li>
+            <span class="material-symbols-outlined" id="petGoodsIcon">
+              pet_supplies
+            </span>
+            <a href="#" id="petGoods">동물용품</a>
+          </li>
+          <li>
+            <span class="material-symbols-outlined" id="adoptIcon">
+              sound_detection_dog_barking
+            </span>
+            <a href="#" id="adopt">입양 및 분양</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+    <section id="petInfo">
+      <div class="todoyInfo">
+        <!-- h3 안에 스팬 작성하기 -->
+        <h3><span>오늘의 건강 정보</span> <span class="material-symbols-outlined" onclick="return checkLoginBeforeWrite()"
+            aria-label="글쓰기 버튼입니다. 클릭하여 글을 작성해보세요!">
+            add_box
+          </span></h3>
+        <li>
+          <a href="#">예방접종 일정: 강아지와 고양이의 필수 및 선택 예방접종 시기와
+            종류</a>
+        </li>
+        <li>
+          <a href="#">영양 관리: 연령과 크기에 따른 적절한 사료 선택 및 급여량
+            가이드</a>
+        </li>
+        <li>
+          <a href="#">구강 관리: 치석 제거 방법과 주기적인 구강 검진의 중요성</a>
+        </li>
+        <li>
+          <a href="#">기생충 예방: 내/외부 기생충 관리 방법과 정기적인 구충제 투여
+            필요성</a>
+        </li>
+      </div>
+      <div class="savedInfo">
+        <h3><span>내가 저장한 건강정보</span><span class="material-symbols-outlined" onclick="return checkLoginBeforeWrite()"
+            aria-label="글쓰기 버튼입니다. 클릭하여 글을 작성해보세요!">
+            add_box
+          </span></h3>
+        <li>
+          <a href="#">정기적인 수의사 검진: 최소 연 1회 건강 검진을 받아야 합니다.</a>
+        </li>
+        <li>
+          <a href="#">예방접종: 권장 일정에 따른 예방접종으로 질병 예방이
+            중요합니다.</a>
+        </li>
+        <li>
+          <a href="#">구강 관리: 정기적인 치아 관리로 구강 질환을 예방합니다.</a>
+        </li>
+        <li>
+          <a href="#">균형 잡힌 식단: 연령과 건강 상태에 맞는 적절한 영양 섭취가
+            필요합니다.</a>
+        </li>
+      </div>
+      <div class="relateddog">
+        <h3><span>For Dog!</span><span class="material-symbols-outlined" onclick="return checkLoginBeforeWrite()"
+            aria-label="글쓰기 버튼입니다. 클릭하여 글을 작성해보세요!">
+            add_box
+          </span></h3>
+        <li>
+          <a href="#">사회화: 어릴 때부터 다양한 환경과 상황에 노출시켜 사회성을
+            기릅니다.</a>
+        </li>
+        <li>
+          <a href="#">목줄 훈련: 산책 시 안전을 위해 목줄 착용에 익숙해지도록
+            합니다.</a>
+        </li>
+        <li>
+          <a href="#">. 발 관리: 정기적으로 발톱을 깎고 발바닥을 점검합니다.</a>
+        </li>
+        <li>
+          <a href="#">냉방병 주의: 여름철 에어컨 사용 시 체온 변화에 주의해야
+            합니다.</a>
+        </li>
+      </div>
+      <div class="relatedcat">
+        <h3><span>For Cat!</span><span class="material-symbols-outlined" onclick="return checkLoginBeforeWrite()"
+            aria-label="글쓰기 버튼입니다. 클릭하여 글을 작성해보세요!">
+            add_box
+          </span></h3>
+        <li>
+          <a href="#">실내 사육: 안전을 위해 실내에서 키우는 것이 좋습니다.</a>
+        </li>
+        <li>
+          <a href="#">스크래치 포스트: 발톱 관리와 스트레스 해소를 위해 필요합니다.</a>
+        </li>
+        <li>
+          <a href="#">높은 곳 제공: 고양이의 본능을 충족시키기 위해 높은 곳을 마련해
+            줍니다.</a>
+        </li>
+        <li><a href="#"></a></li>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div id="companyInfo">
+      <span id="name">대표 : 윤승현</span><br />
+      <span>연락처 : </span>
+      <a href="tel 010-0000-0000">010-1234-5999</a> <br />
+      <span>주소 : 경기도 평택시 신장동</span> <br />
+      <span>이메일 : <a href="email">getplay0131@naver.com</a></span>
+      <p id="updateStat">작업 진행중:24년도 08월 1일~</p>
+    </div>
+  </footer>
+  <script src="petHealth.js"></script>
+  <script src="menuToggle.js"></script>
+  <script src="pet.js"></script>
+</body>
+
+</html>

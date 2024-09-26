@@ -1,0 +1,117 @@
+<!-- 반응형이면서도 유연한 슬라이더 기능 -->
+<div class="adoptBox">
+  <h3>입양 및 분양</h3>
+  <div class="adopt-slider">
+    <div class="adopt-list">
+      <div class="adopt-item active">
+        <img src="images/adopt/dog1.jpg" alt="입양 강아지 1" />
+        <div class="adopt-content">
+          <h4>멍멍이</h4>
+          <p>2살 / 수컷 / 중형견</p>
+          <p>활발하고 친근한 성격의 귀여운 강아지입니다.</p>
+        </div>
+      </div>
+      <div class="adopt-item">
+        <img src="images/adopt/cat1.jpg" alt="입양 고양이 1" />
+        <div class="adopt-content">
+          <h4>야옹이</h4>
+          <p>1살 / 암컷 / 단모종</p>
+          <p>조용하고 애교 많은 고양이입니다.</p>
+        </div>
+      </div>
+      <!-- 추가 입양/분양 아이템들... -->
+    </div>
+    <button class="adopt-prev">&#10094;</button>
+    <button class="adopt-next">&#10095;</button>
+    <!-- 도트 네비게이션은 JavaScript에 의해 자동으로 생성됩니다 -->
+  </div>
+</div>
+
+<!-- --------------------------------- -->
+<!-- 유저로부터 날짜를 입력받아 디데이 카운트 하는 기능 -->
+<section class="profile-section">
+  <h3>내 정보</h3>
+  <img
+    src="images/마이페이지/profile-2398782_1920.png"
+    alt="profile-image"
+    class="profile-image"
+  />
+  <p><strong>이름: </strong>홍길동</p>
+  <p><strong>이메일: </strong>user@example.com</p>
+  <p>
+    <strong>가입일: </strong>
+    <span id="joinDateDisplay"></span>
+    <button onclick="setJoinDate()">가입일 설정</button>
+  </p>
+  <div id="dDay">D+<span id="dayCount">0</span><span id="day"> DAY</span></div>
+</section>
+<script>
+  // 가입일 설정 함수
+  function setJoinDate() {
+    const joinDate = new Date().toISOString().split("T")[0]; // 오늘 날짜를 YYYY-MM-DD 형식으로 가져옴
+    localStorage.setItem("userJoinDate", joinDate);
+    updateJoinDateDisplay();
+    updateDDayCount();
+  }
+
+  // 가입일 표시 업데이트 함수
+  function updateJoinDateDisplay() {
+    const joinDate = localStorage.getItem("userJoinDate");
+    const joinDateDisplay = document.getElementById("joinDateDisplay");
+    if (joinDate) {
+      joinDateDisplay.textContent = joinDate;
+    } else {
+      joinDateDisplay.textContent = "미설정";
+    }
+  }
+
+  // D-day 카운트 함수
+  function updateDDayCount() {
+    const joinDateString = localStorage.getItem("userJoinDate");
+
+    if (!joinDateString) {
+      document.getElementById("dayCount").textContent = "0";
+      return;
+    }
+
+    const today = new Date();
+    const joinDate = new Date(joinDateString);
+
+    const differenceInTime = today.getTime() - joinDate.getTime();
+    const differenceInDays = Math.floor(differenceInTime / (1000 * 3600 * 24));
+
+    document.getElementById("dayCount").textContent = differenceInDays;
+    document.getElementById("day").textContent =
+      differenceInDays === 1 ? " DAY" : " DAYS";
+  }
+
+  // 페이지 로드 시 실행
+  window.onload = function () {
+    updateJoinDateDisplay();
+    updateDDayCount();
+  };
+</script>
+<!-- 이 접근 방식의 주요 특징:
+
+"가입일 설정" 버튼을 클릭하면 현재 날짜가 가입일로 설정됩니다.
+가입일은 로컬 스토리지에 저장되어 브라우저를 닫아도 유지됩니다.
+페이지 로드 시 저장된 가입일을 표시하고 D-day를 계산합니다.
+가입일이 설정되지 않은 경우, "미설정"으로 표시되고 D-day는 0으로 표시됩니다.
+
+이 방법의 장점:
+
+사용자 입력 없이 간단히 버튼 클릭으로 가입일을 설정할 수 있습니다.
+서버 없이 클라이언트 측에서만 구현 가능합니다.
+코드가 간단하고 이해하기 쉽습니다.
+
+단점:
+
+실제 가입 날짜를 정확히 반영하지 못할 수 있습니다.
+사용자가 임의로 여러 번 설정할 수 있습니다.
+다른 기기에서 접속하면 정보가 유지되지 않습니다.
+
+사용 방법:
+
+페이지에 처음 접속하면 가입일이 "미설정"으로 표시됩니다.
+"가입일 설정" 버튼을 클릭하면 현재 날짜가 가입일로 설정되고 D-day가 계산됩니다.
+이후 페이지에 접속할 때마다 저장된 가입일과 그에 따른 D-day가 표시됩니다. -->

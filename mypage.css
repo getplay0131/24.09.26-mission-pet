@@ -1,0 +1,252 @@
+/* 3. 레이아웃 */
+
+main .content_wrapper #left_Menu {
+  height: max-content;
+  width: max-content;
+  position: absolute;
+  top: 0;
+  /* left: 0.5%; */
+}
+/* 4. 컴포넌트 */
+/* 4a. 헤더와 푸터 */
+header,
+footer {
+  background-color: #daa520;
+  padding: 1.5rem;
+}
+
+header {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 10px 20px;
+  position: relative;
+  top: 0;
+  width: 100%;
+  height: auto;
+}
+
+header h1 {
+  flex-grow: 1;
+  text-align: center;
+  margin: 0;
+  cursor: pointer;
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 0;
+  justify-content: space-around;
+}
+
+footer #name {
+  display: inline-block;
+}
+
+footer #name:hover {
+  animation: tracking-in-expand 2s linear;
+}
+
+#companyInfo {
+  border-bottom: 3px solid #000;
+  font-size: 1.2rem;
+}
+
+#updateStat {
+  text-align: right;
+  font-size: 1.2rem;
+}
+
+/* 4b. 헤더 우측 */
+.header-right {
+  display: flex;
+  flex: 0.2;
+  flex-grow: none;
+  align-items: center;
+  border: 3px solid #000;
+  background-image: url(images/마이페이지/boy-8233868_1280.png);
+  background-position: center;
+  background-size: cover;
+}
+
+/* 4c. 로고 */
+
+#mainlogo {
+  display: inline-block;
+  transform: translateX(0) rotateZ(0);
+  animation: bounce-in-top 2s ease;
+  opacity: 1;
+  position: sticky;
+  cursor: pointer;
+  flex: 0.5;
+  margin: auto;
+}
+
+#mainlogo:hover {
+  transition: font-size 1s ease-in-out;
+  font-size: 3rem;
+}
+
+/* 4d. D-Day 카운터 */
+#dDay {
+  flex: 1;
+  margin: 5%;
+  color: #8b4513;
+  font-weight: bold;
+  font-size: 3rem;
+  text-align: center;
+  justify-content: center;
+}
+
+/* 4e. 마이페이지 */
+#myPage {
+  background-color: #000;
+  color: #daa520;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  padding: 5px;
+}
+
+#myPage:hover {
+  background: #daa520;
+  color: #8b4513;
+  transition: color, background 0.5s;
+}
+
+/* (각 메뉴 아이템의 아이콘 스타일) */
+
+/* 5. 메인 콘텐츠 섹션 */
+.mypage-container {
+  max-width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 10%;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  position: relative;
+}
+
+.profile-section,
+.pet-section {
+  margin-bottom: 10%;
+  background-color: #f9f9f9;
+  border: 3px solid #8b4513;
+  border-radius: 10px;
+  padding: 1.5%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.pet-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: 3px solid #8b4513;
+  position: relative;
+  margin: auto;
+  margin-bottom: 10%;
+  overflow: hidden;
+  width: 100%;
+  flex-shrink: 1;
+}
+
+.profile-image {
+  width: 20%;
+  height: 20%;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  cursor: pointer;
+}
+
+.pet-images {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  margin-bottom: 10%;
+  padding: 0;
+  top: 50vh;
+}
+
+.pet-image {
+  display: block;
+  width: 80vw;
+  height: 30vh;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 5%;
+  cursor: pointer;
+}
+
+.pet-card {
+  display: block;
+  text-align: center;
+  margin-bottom: 3%;
+  padding: 0.5rem;
+  background: #f1f1f1;
+  border-radius: 5%;
+  width: 100%;
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+}
+
+/* popup section */
+.popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+}
+
+.popup-content {
+  background-color: #fff;
+  padding: 10%;
+  border-radius: 10px;
+  text-align: center;
+}
+
+/* 편집 가능한 컨텐츠 스타일 */
+.editable {
+  cursor: pointer;
+}
+
+.editable:hover {
+  background-color: #f0f0f0;
+}
+
+/* 이미지 스타일 */
+.profile-image,
+.pet-image {
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.profile-image:hover,
+.pet-image:hover {
+  transform: scale(1.1);
+}
+
+@media (max-height: 667px) {
+  .profile-section {
+    height: 35vh;
+  }
+  #profileEmail {
+    display: none;
+  }
+}
+
+/* @media (min-height: 720px) and (max-height: 880px) {
+  .pet-card {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+  }
+} */

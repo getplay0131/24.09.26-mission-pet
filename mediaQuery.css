@@ -1,0 +1,237 @@
+/* 미디어 쿼리 구역 */
+
+/* 1200px 이상 화면 */
+@media (min-width: 1200px) {
+  .slider .list .item .content {
+    font-size: 3.5rem !important;
+  }
+
+  .slider .list .item .content h2 {
+    font-size: 3.5rem !important;
+  }
+}
+
+/* 768px에서 1200px 사이 화면 */
+@media (max-width: 1200px) and (min-width: 769px) {
+  .slider .list .item.active p:nth-child(1),
+  .slider .list .item.active h2,
+  .slider .list .item.active p:nth-child(3),
+  .slider .list .item .content,
+  .slider .list .item .item .content h2,
+  .slider .list .item .item.active .content h2 {
+    font-size: 3rem;
+  }
+  #petInfo {
+    font-size: 1.15rem;
+  }
+}
+
+/* 768px 이하 화면 */
+@media (max-width: 768px) {
+  body {
+    font-size: x-large;
+  }
+
+  #left_Menu {
+    width: 100%;
+    left: -100%;
+  }
+
+  .header-right {
+    display: flex;
+    flex: 0.5;
+    flex-direction: column;
+    align-items: center;
+    line-height: 180%;
+    padding-left: 2%;
+    font-style: italic;
+  }
+
+  header h1 {
+    flex-grow: 0;
+    padding-left: 0;
+  }
+
+  #dDay {
+    width: 100%;
+    margin: -1%;
+  }
+
+  #myPage {
+    scale: 1;
+    margin-bottom: 2%;
+    text-decoration: none;
+  }
+
+  #myPageText {
+    opacity: 1;
+    margin-top: 2px;
+  }
+
+  #helpIcon {
+    position: static;
+    margin-top: 5px;
+  }
+
+  .tooltip {
+    display: none;
+  }
+
+  .thumbnail {
+    justify-content: start;
+  }
+
+  .thumbnail-container {
+    padding: 0 50px;
+  }
+
+  .thumbnail .item {
+    width: 10%;
+    height: 7.5%;
+  }
+
+  .slider .list .item .content,
+  .slider .list .item .content h2,
+  .slider .list .item.active p:nth-child(1),
+  .slider .list .item.active h2,
+  .slider .list .item.active p:nth-child(3) {
+    font-size: 2.5rem;
+  }
+
+  .btnSection {
+    top: 0;
+    position: absolute;
+    border: 1rem solid #fff;
+  }
+
+  #prevBtn,
+  #nextBtn {
+    position: absolute;
+    padding: 5%;
+    font-size: 2rem;
+  }
+
+  .adoptBox {
+    display: none;
+  }
+
+  .adopt-slider {
+    height: 300px;
+  }
+
+  .adopt-content {
+    font-size: 0.9rem;
+  }
+
+  .adopt-content h4 {
+    font-size: 1.2rem;
+  }
+  #petInfo {
+    font-size: 1.15rem;
+  }
+}
+
+/* 768px 이상 화면 */
+@media (min-width: 768px) {
+  #left_Menu {
+    width: 250px;
+    left: -250px;
+    height: calc(100vh - 60px);
+    transition: left 0.3s ease-in-out;
+  }
+}
+
+@media (max-height: 667px) {
+  .profile-section {
+    height: 35vh;
+  }
+  #profileEmail {
+    display: none;
+  }
+  #petInfo {
+    font-size: 1.15rem;
+  }
+}
+
+/* 600px 이하 화면 */
+@media (max-width: 600px) {
+  .pet-image {
+    width: 50%;
+    height: 50%;
+  }
+  .profile-image {
+    width: 30%;
+    height: 30%;
+  }
+  #petInfo {
+    font-size: 1.15rem;
+  }
+}
+
+/* 500px 이하 화면 */
+@media (max-width: 500px) {
+  .thumbnail .item {
+    width: 10%;
+    height: 5%;
+  }
+}
+
+@media (max-width: 480px) {
+  .wrapper .remember-forgot {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .remember-forgot a {
+    margin-top: 5px;
+  }
+  #petInfo div h3 span {
+    font-size: 1rem;
+  }
+  .thumbnail .item {
+    display: none;
+    /* width: 50%; */
+  }
+}
+
+/* 420px 이하 화면 */
+@media (max-width: 420px) {
+  .slider .list .item .content,
+  .slider .list .item .content h2,
+  .slider .list .item.active p:nth-child(1),
+  .slider .list .item.active h2,
+  .slider .list .item.active p:nth-child(3) {
+    font-size: 2rem;
+  }
+  #petInfo {
+    font-size: 1rem;
+  }
+  #mainlogo {
+    font-size: 2rem;
+  }
+  #petInfo div h3 span {
+    font-size: 0.8rem;
+  }
+}
+
+/* 높이 조절!! */
+/* 하이트 1020px미만 */
+@media (max-height: 1020px) {
+  #left_Menu ul li {
+    padding: 0 10px;
+  }
+}
+
+/* 하이트 670px미만 */
+@media (max-height: 670px) {
+  #left_Menu ul li {
+    padding: 0 5px;
+  }
+  #left_Menu ul li a {
+    font-size: 0.8rem;
+    flex-wrap: wrap;
+  }
+  #companyInfo {
+    display: none;
+  }
+}

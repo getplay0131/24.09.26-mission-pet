@@ -1,0 +1,255 @@
+/* 24.08.10 */
+/* <!-- 완료 -->
+  */
+
+/* 전역 스타일 및 리셋 */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: "Diphylleia", serif;
+  font-weight: 400;
+  font-style: normal;
+  background-color: #daa520;
+  color: #8b4513;
+}
+
+/* 타이포그래피 */
+.diphylleia-regular {
+  font-family: "Diphylleia", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* 레이아웃 */
+main .content_wrapper #left_Menu {
+  height: max-content;
+  width: max-content;
+  position: absolute;
+  top: 0;
+  /* left: 0.5%; */
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  padding: 0.2rem;
+  /* background-color: #fff; */
+  flex: 1;
+  position: relative;
+  top: 0;
+  height: 70%;
+}
+
+/* 컴포넌트 */
+/* 헤더와 푸터 */
+header,
+footer {
+  background-color: #daa520;
+  padding: 1.5rem;
+}
+
+header {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 10px 20px;
+  position: relative;
+  top: 0;
+  width: 100%;
+  height: auto;
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 0;
+  justify-content: space-around;
+}
+
+footer #companyInfo #name {
+  display: block;
+}
+footer #name:hover {
+  animation: tracking-in-expand 2s linear;
+}
+#companyInfo {
+  border-bottom: 3px solid #000;
+  font-size: 1.2rem;
+}
+#updateStat {
+  text-align: right;
+  font-size: 1.2rem;
+}
+header h1 {
+  flex-grow: 1;
+  text-align: center;
+  margin: 0;
+  cursor: pointer;
+}
+
+.header-right {
+  display: flex;
+  flex: 0.5;
+  flex-grow: none;
+  align-items: center;
+  border: 3px solid #000;
+  background-image: url(images/마이페이지/boy-8233868_1280.png);
+  background-position: center;
+  background-size: cover;
+}
+/* 로고  */
+
+#logoSec {
+  display: inline;
+  flex: 2.5;
+  text-align: center;
+}
+#mainlogo {
+  display: inline-block;
+  transform: translateX(0) rotateZ(0);
+  animation: bounce-in-top 2s ease;
+  opacity: 1;
+  position: sticky;
+  cursor: pointer;
+  flex: 1;
+  margin: auto;
+}
+
+#mainlogo:hover {
+  transition: font-size 1s ease-in-out;
+  font-size: 3rem;
+}
+#logoSec:active {
+  animation: bounce-in-top 2s linear;
+}
+/* 미디어 쿼리로 폰트 크기 조절 */
+#dDay {
+  flex: 1;
+  margin: 5%;
+  color: #8b4513;
+  font-weight: bold;
+  font-size: 1.5rem;
+  text-align: center;
+  justify-content: center;
+}
+/* 여기 작업! */
+#myPage {
+  background-color: #000;
+  color: #daa520;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  padding: 5px;
+}
+#myPage:hover {
+  background: #daa520;
+  color: #8b4513;
+  transition: color, background 0.5s;
+}
+
+/* 메인 콘텐츠 섹션 */
+
+#petInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  width: 93.5vw;
+  height: 100vh;
+  background-color: rgba(139, 69, 19, 0.35);
+  /* color: #daa520; */
+}
+#petInfo div {
+  overflow: hidden;
+  display: block;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-y: auto;
+}
+#petInfo div h3 {
+  border-bottom: 3px solid #8b4513;
+  font-size: 1.2rem;
+  font-style: italic;
+  position: relative;
+  font-size: 1rem;
+}
+#petInfo div h3 span {
+  transform: translateX(0);
+  transition: transform 1.5s;
+  display: inline-block;
+}
+#petInfo div h3:hover > span {
+  transform: translateX(10%);
+}
+
+#petInfo div h3 > span.material-symbols-outlined {
+  position: absolute;
+  right: 0;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+
+#petInfo div h3 > span.material-symbols-outlined:hover {
+  transform: scale(1.2);
+  color: #000;
+}
+
+#petInfo li {
+  list-style: none;
+}
+#petInfo li a {
+  text-decoration: none;
+  color: #8b4513;
+}
+/* 구역별 위치 지정하기 하단 */
+.todoyInfo {
+  position: absolute;
+  flex: 1;
+  top: 0;
+  left: 0;
+  width: 40%;
+  height: 50%;
+  border: 5px solid #8b4513;
+}
+.savedInfo {
+  position: absolute;
+  flex: 1;
+  top: 0;
+  right: 0;
+  width: 60%;
+  height: 50%;
+  border: 5px solid #8b4513;
+}
+.relateddog {
+  position: absolute;
+  flex: 1;
+  bottom: 0;
+  left: 0;
+  width: 50%;
+  height: 50%;
+  border: 5px solid #8b4513;
+}
+.relatedcat {
+  position: absolute;
+  flex: 1;
+  bottom: 0;
+  right: 0;
+  width: 50%;
+  height: 50%;
+  border: 5px solid #8b4513;
+}
+/* 구역별 위치 지정하기 상단 */
+/* hover 섹션 */
+#petInfo li a:hover {
+  color: #daa520;
+  text-shadow: 1px 1px 1px #000;
+  transition: all 0.3s;
+}

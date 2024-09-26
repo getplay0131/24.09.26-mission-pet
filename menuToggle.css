@@ -1,0 +1,229 @@
+/* 메뉴 */
+
+#menu_Toggle {
+  flex: 1;
+  background: none;
+  border: none;
+  font-size: 2.5rem;
+  cursor: pointer;
+  padding: 1rem;
+  color: #8b4513;
+  transition: transform 0.3s ease-in-out;
+  text-align: center;
+  left: 0;
+  position: absolute;
+  justify-content: center;
+  margin: auto;
+  z-index: 5;
+}
+
+#menuIcon {
+  transition: transform 0.3s ease-in-out;
+  position: absolute;
+  scale: 1;
+  top: -50%;
+  left: -15%;
+  padding: 10px;
+}
+
+#menu_Toggle.active #menuIcon {
+  transform: rotate(90deg);
+}
+
+/* 좌측 메뉴 */
+
+#left_Menu {
+  position: absolute;
+  padding: 0.5rem;
+  background-color: rgba(210, 180, 140, 0.8);
+  transition: all 0.3s ease-in-out;
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  left: -250px;
+  width: 300px;
+  height: calc(50vh - 60px);
+  border-radius: 10px;
+  /* top: 5%; */
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+#left_Menu.active {
+  left: 0;
+}
+
+#left_Menu::-webkit-scrollbar {
+  width: 5px;
+}
+
+#left_Menu::-webkit-scrollbar-thumb {
+  background-color: #8b4513;
+  border-radius: 5px;
+}
+
+#left_Menu::-webkit-scrollbar-track {
+  background-color: #f0f0f0;
+}
+
+#left_Menu ul {
+  list-style-type: none;
+  padding: 5px;
+}
+
+#left_Menu ul li {
+  padding: 0 5px;
+}
+
+#left_Menu ul li a {
+  color: #8b4513;
+  text-decoration: underline;
+  font-size: 1.2rem;
+  text-indent: 0.2rem;
+  transform: translateX(0) rotateZ(0);
+  transition: transform 2s;
+  display: inline-block;
+  position: relative;
+  font-weight: bold;
+  padding: 5px 10px;
+}
+#left_Menu ul li:hover > span.material-symbols-outlined {
+  animation: jello-horizontal 0.8s linear;
+}
+
+/* 토글 메뉴 폰트 호버 */
+#left_Menu ul li a:hover {
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0);
+  color: #daa525;
+  background: none;
+  border: rgba(0, 0, 0, 0);
+  transform: translateX(10%);
+  transition: transform 2s;
+}
+#left_Menu ul li a:hover .material-symbols-outlined {
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0);
+  color: #daa525;
+  background: none;
+  border: rgba(0, 0, 0, 0);
+  transform: translateX(10%);
+  transition: transform 2s;
+  border: 5px solid #000;
+}
+
+.more-menu-button {
+  display: none;
+  text-align: center;
+  padding: 10px;
+  background-color: #f0f0f0;
+  cursor: pointer;
+  transition: all 0.5s;
+  color: #8b4513;
+  position: sticky;
+  bottom: 0;
+}
+
+.more-menu-button:hover {
+  background-color: #daa525;
+}
+
+/* 좌측 메뉴 상단 */
+
+/* -------------------------------------------- */
+
+/* 아이콘 구역 */
+/* 홈으로 */
+#left_Menu ul li .material-symbols-outlined #home {
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 200, "opsz" 24;
+  position: absolute;
+}
+#left_Menu ul li > #homeIcon {
+  margin-left: -10%;
+}
+
+/* 산책로 */
+
+#left_Menu ul li .material-symbols-outlined #trail {
+  font-variation-settings: "FILL" 0, "wght" 700, "GRAD" -25, "opsz" 40;
+  position: absolute;
+}
+#left_Menu ul li > #trailIcon {
+  margin-left: -10%;
+}
+
+/* 커뮤니티 */
+#left_Menu ul li .material-symbols-outlined #community {
+  font-variation-settings: "FILL" 0, "wght" 700, "GRAD" -25, "opsz" 48;
+  position: absolute;
+}
+#left_Menu ul li > #communityIcon {
+  margin-left: -10%;
+}
+/* 함께 서비스 */
+
+#left_Menu ul li .material-symbols-outlined #together {
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 200, "opsz" 24;
+  position: absolute;
+}
+#left_Menu ul li > #togetherIcon {
+  margin-left: -10%;
+}
+/* 병원 서비스 */
+
+#left_Menu ul li .material-symbols-outlined #hosoital {
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 200, "opsz" 24;
+  position: absolute;
+}
+#left_Menu ul li > #hosoitalIcon {
+  margin-left: -10%;
+}
+
+/* 위치 서비스 */
+
+#left_Menu ul li .material-symbols-outlined #location {
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 200, "opsz" 24;
+  position: absolute;
+}
+#left_Menu ul li > #locationIcon {
+  margin-left: -10%;
+  /* top: -50px; */
+}
+
+/* 보호자 연락 서비스 */
+
+#left_Menu ul li .material-symbols-outlined #parents {
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 200, "opsz" 24;
+  position: absolute;
+}
+
+#left_Menu ul li > #parentsIcon {
+  margin-left: -10%;
+}
+/* 펫택시 서비스  */
+
+#left_Menu ul li .material-symbols-outlined #pettaxi {
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 200, "opsz" 24;
+  position: absolute;
+}
+
+#left_Menu ul li > #pettaxiIcon {
+  margin-left: -10%;
+}
+/* 반려동물 용품 서비스*/
+
+#left_Menu ul li .material-symbols-outlined #petGoods {
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 200, "opsz" 24;
+  position: absolute;
+}
+
+#left_Menu ul li > #petGoodsIcon {
+  margin-left: -10%;
+}
+/* 입양 및 분양 */
+
+#left_Menu ul li .material-symbols-outlined #adopt {
+  font-variation-settings: "FILL" 0, "wght" 500, "GRAD" 0, "opsz" 24;
+}
+#left_Menu ul li > #adoptIcon {
+  margin-left: -10%;
+}
+/* 아이콘 구역 */

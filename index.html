@@ -1,0 +1,411 @@
+<!-- 24.08.13~ 슬라이드 기능 별도 구현 중 -->
+<!-- 사진 슬라이드 기능 구현 필요 -->
+<!-- 입양 및 분양 섹션 상단은 사진 하단은 해당 사진에 대한 정보 입력 -->
+<!-- 반응형 구상 필요 -->
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Diphylleia&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <!-- 로고 클릭시 발생할 아이콘 -->
+
+  <!-- 하단 : 아이콘 구역 -->
+
+  <!-- 홈으로 이동 아이콘 -->
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <!-- 산책로 아이콘 -->
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <!-- 커뮤니티 아이콘 -->
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <!-- 함께 서비스 아이콘 -->
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <!-- 병원 아이콘 -->
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <!-- 위치 아이콘 -->
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <!-- 보호자 아이콘 -->
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <!-- 펫택시 아이콘 -->
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <!-- 반려동물 용품 아이콘-->
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <!-- 입양 및 분양 아이콘-->
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <link rel="stylesheet" href="animation.css" />
+  <link rel="stylesheet" href="menuToggle.css" />
+  <link rel="stylesheet" href="slider_font.css" />
+  <link rel="stylesheet" href="pet.css" />
+  <link rel="stylesheet" href="mediaQuery.css" />
+  <title>댕댕이의 냥</title>
+</head>
+
+<body>
+  <header>
+    <!-- 메뉴 토글 아이콘 -->
+    <div id="menuSection">
+      <button id="menu_Toggle">
+        <i class="fas fa-bars" id="menuIcon"></i>
+      </button>
+    </div>
+    <h1 id="mainlogo" class="slide-fwd-center">
+      <a href="index.html">댕댕이의 냥</a>
+    </h1>
+    <div class="header-right">
+      <a href="login.html" id="dDayLink">
+        <div id="dDay">
+          D+<span id="dayCount">0</span><span id="day"> DAY</span>
+        </div>
+        <span id="myPageText">마이페이지</span>
+      </a>
+      <i class="fas fa-question-circle" id="helpIcon" title="도움말"></i>
+      <div class="tooltip">클릭하여 마이페이지로 이동</div>
+    </div>
+  </header>
+
+  <main>
+    <!-- 4구역으로 나누어 각 구역마다 슬라이드 전환하기 -->
+    <div id="main_section">
+      <section id="petShowcase">
+        <div class="content_wrapper">
+          <nav id="left_Menu">
+            <ul>
+              <!-- 정보 앞에 아이콘 표시하기 -->
+              <li>
+                <span class="material-symbols-outlined" id="homeIcon">
+                  home
+                </span>
+                <a href="index.html" id="home">홈으로</a>
+              </li>
+              <li>
+                <span class="material-symbols-outlined" id="trailIcon">
+                  hiking
+                </span>
+                <a href="#" id="trail">산책로</a>
+              </li>
+              <li>
+                <span class="material-symbols-outlined" id="communityIcon">
+                  forum
+                </span>
+                <a href="#" id="community">커뮤니티</a>
+              </li>
+              <li>
+                <span class="material-symbols-outlined" id="togetherIcon">
+                  pets
+                </span>
+                <a href="#" id="together">함께 서비스</a>
+              </li>
+              <li>
+                <span class="material-symbols-outlined" id="hosoitalIcon">
+                  medication
+                </span>
+                <a href="#" id="hosoital">병원</a>
+              </li>
+              <li>
+                <span class="material-symbols-outlined" id="locationIcon">
+                  explore
+                </span>
+                <a href="#" id="location">위치</a>
+              </li>
+              <li>
+                <span class="material-symbols-outlined" id="parentsIcon">
+                  phone_in_talk
+                </span>
+                <a href="#" id="parents">보호자</a>
+              </li>
+              <li>
+                <span class="material-symbols-outlined" id="pettaxiIcon">
+                  local_taxi
+                </span>
+                <a href="#" id="pettaxi">펫택시</a>
+              </li>
+              <li>
+                <span class="material-symbols-outlined" id="petGoodsIcon">
+                  pet_supplies
+                </span>
+                <a href="#" id="petGoods">동물용품</a>
+              </li>
+              <li>
+                <span class="material-symbols-outlined" id="adoptIcon">
+                  sound_detection_dog_barking
+                </span>
+                <a href="#" id="adopt">입양 및 분양</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <h2>전국 내 새꾸 자랑</h2>
+        <!-- 슬라이드 -->
+        <div class="slider">
+          <!-- 리스트 아이템 -->
+          <div class="list">
+            <div class="item active">
+              <img src="images/cat/cat-2460393_1920.jpg" alt="catimg" />
+              <div class="content">
+                <p>냥덕후</p>
+                <h2>Slider 01</h2>
+                <p>
+                  우리 고양이 발바닥, 핑크색 젤리 같아요! 만질 때마다 행복
+                  호르몬 뿜뿜!
+                </p>
+              </div>
+            </div>
+            <div class="item">
+              <img src="images/dog/dog-4494554_1280.jpg" alt="dogimg" />
+              <div class="content">
+                <p>멍멍러버</p>
+                <h2>Slider 02</h2>
+                <p>
+                  산책 중 우리 강아지 꼬리, 신나서 빙글빙글! 동네 한 바퀴 돌면
+                  전기 한 달치는 만들 것 같아요.
+                </p>
+              </div>
+            </div>
+            <div class="item">
+              <img src="images/cat/cat-2934720_1280.jpg" alt="catimg" />
+              <div class="content">
+                <p>캣맘</p>
+                <h2>Slider 03</h2>
+                <p>
+                  창틀 위 우리 고양이, 동네 풍경 감상하는 모습이 화가 같아요.
+                  집사는 매일 작품 감상 중!
+                </p>
+              </div>
+            </div>
+            <div class="item">
+              <img src="images/dog/dog-8232158_1920.jpg" alt="dogimg" />
+              <div class="content">
+                <p>퍼피파파</p>
+                <h2>Slider 04</h2>
+                <p>
+                  공 던지기의 제왕, 우리 강아지! 지칠 줄 모르는 에너지에
+                  집사가 먼저 파김치됩니다.
+                </p>
+              </div>
+            </div>
+            <div class="item">
+              <img src="images/cat/cat-5366401_1920.jpg" alt="catimg" />
+              <div class="content">
+                <p>털뭉치집사</p>
+                <h2>Slider 05</h2>
+                <p>
+                  털 날리는 계절이면 집 안이 눈 내린 것 같아요. 우리 고양이는
+                  사계절 내내 겨울을 선물하는 천사랍니다.
+                </p>
+              </div>
+            </div>
+            <div class="item">
+              <img src="images/dog/dog-8421955_1920.jpg" alt="img" />
+              <div class="content">
+                <p>댕댕이마스터</p>
+                <h2>Slider 06</h2>
+                <p>
+                  우리 강아지 눈빛만으로 대화 가능! 텔레파시 능력자 집사 되는
+                  중이에요.
+                </p>
+              </div>
+            </div>
+            <div class="item">
+              <img src="images/cat/cat-5366403_1920.jpg" alt="img" />
+              <div class="content">
+                <p>야옹이바라기</p>
+                <h2>Slider 07</h2>
+                <p>
+                  우리 고양이 그루밍하는 모습, 세상에서 제일 깔끔한
+                  댄디남이에요. 어쩜 이리 멋질까요?
+                </p>
+              </div>
+            </div>
+            <div class="item">
+              <img src="images/dog/pug-8632718_1280.jpg" alt="img" />
+              <div class="content">
+                <p>멍뭉이사랑</p>
+                <h2>Slider 08</h2>
+                <p>
+                  간식 봉지 소리에 요술처럼 나타나는 우리 강아지, 세상에서
+                  가장 빠른 생명체랍니다!
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="btnSection">
+          <button id="prevBtn">
+            <i class="fa-solid fa-arrow-left fa-beat"></i>
+          </button>
+          <button id="nextBtn">
+            <i class="fa-solid fa-arrow-right fa-beat"></i>
+          </button>
+        </div>
+        <!-- 썸네일 이미지 -->
+        <div class="thumbnail-container">
+          <div class="thumbnail">
+            <div class="item active">
+              <a href="#"><img src="images/cat/cats-8096304_1280.jpg" alt="thumbnailImgCat" /></a>
+              <div class="content">내 새꾸 자랑!</div>
+            </div>
+            <div class="item">
+              <a href="#"><img src="images/dog/puppy-4553156_1280.jpg" alt="thumbnailImgDog" /></a>
+              <div class="content">내 새꾸 자랑!</div>
+            </div>
+            <div class="item">
+              <a href="#"><img src="images/cat/evening-8429871_1280.jpg" alt="thumbnailImgCat" /></a>
+              <div class="content">내 새꾸 자랑!</div>
+            </div>
+            <div class="item">
+              <a href="#"><img src="images/dog/puppy-4583450_1280.jpg" alt="thumbnailImgDog" /></a>
+              <div class="content">내 새꾸 자랑!</div>
+            </div>
+            <div class="item">
+              <a href="#"><img src="images/cat/kitten-2328222_1280.jpg" alt="thumbnailImgCat" /></a>
+              <div class="content">내 새꾸 자랑!</div>
+            </div>
+            <div class="item">
+              <a href="#"><img src="images/dog/puppy-4643706_1920.jpg" alt="thumbnailImgDog" /></a>
+              <div class="content">내 새꾸 자랑!</div>
+            </div>
+            <div class="item">
+              <a href="#"><img src="images/cat/woman-6687637_1280.jpg" alt="thumbnailImgCat" /></a>
+              <div class="content">내 새꾸 자랑!</div>
+            </div>
+            <div class="item">
+              <a href="#"><img src="images/dog/shih-tzu-8287355_1920.jpg" alt="thumbnailImgDog" /></a>
+              <div class="content">내 새꾸 자랑!</div>
+            </div>
+          </div>
+        </div>
+        <!-- 페이지 인디케이터  -->
+        <div class="page-indicator"></div>
+      </section>
+    </div>
+    <!-- 사진 슬라이드 -->
+    <section id="petInfo">
+      <ol class="infoBox">
+        <h3><a href="petHealth.html">반려 동물 건강 정보</a></h3>
+        <li>
+          <a href="petHealth.html">예방접종 일정: 강아지와 고양이의 필수 및 선택 예방접종 시기와
+            종류</a>
+        </li>
+        <li>
+          <a href="petHealth.html">영양 관리: 연령과 크기에 따른 적절한 사료 선택 및 급여량
+            가이드</a>
+        </li>
+        <li>
+          <a href="petHealth.html">구강 관리: 치석 제거 방법과 주기적인 구강 검진의 중요성</a>
+        </li>
+        <li>
+          <a href="petHealth.html">기생충 예방: 내/외부 기생충 관리 방법과 정기적인 구충제 투여
+            필요성</a>
+        </li>
+      </ol>
+      <ol class="infoBox">
+        <h3><a href="petTraining.html">훈련 관련 정보</a></h3>
+        <li>
+          <a href="petTraining.html">사회화 훈련: 어린 시기부터 다양한 환경과 상황에 노출시키는
+            중요성</a>
+        </li>
+        <li>
+          <a href="petTraining.html">기본 명령어 교육: '앉아', '기다려', '엎드려' 등 기초 훈련 방법</a>
+        </li>
+        <li>
+          <a href="petTraining.html">문제 행동 교정: 과도한 짖음, 물건 씹기 등 흔한 문제 행동의 원인과
+            해결책</a>
+        </li>
+        <li>
+          <a href="petTraining.html">긍정 강화 기법: 보상을 통한 효과적인 훈련 방법과 적용 사례</a>
+        </li>
+      </ol>
+      <!-- 사진 슬라이드 되며 전환, 사진 클릭시 입양 및 분양 페이지에 사진과 해당 동물에 대한 정보 명시하기 -->
+      <div class="adoptBox">
+        <h3>입양 및 분양</h3>
+        <div class="adopt-slider">
+          <div class="adopt-list">
+            <!-- 입양 -->
+            <div class="adopt-item active">
+              <img src="images/adoptImg/iloveimg-resized/dog-8262506_1920.jpg" alt="입양 강아지 1" />
+              <div class="adopt-content">
+                <h4>해피</h4>
+                <p>3살 / 수컷 / 소형견</p>
+                <p>
+                  활발하고 애교 많은 해피는 새로운 가족을 기다리고 있어요.
+                  산책을 좋아하고 아이들과도 잘 어울립니다.
+                </p>
+              </div>
+            </div>
+            <div class="adopt-item">
+              <img src="images/adoptImg/iloveimg-resized/cat-551554_1280.jpg" alt="입양 고양이 2" />
+              <div class="adopt-content">
+                <h4>루나</h4>
+                <p>2살 / 암컷 / 장모종</p>
+                <p>
+                  조용하고 우아한 루나는 집사의 무릎을 독차지하는 것을
+                  좋아해요. 긴 털이 매력적인 고양이랍니다.
+                </p>
+              </div>
+            </div>
+            <!-- 분양 -->
+            <div class="adopt-item">
+              <img src="images/adoptImg/iloveimg-resized/dog-8510901_1280.jpg" alt="분양 강아지 1" />
+              <div class="adopt-content">
+                <h4>초코</h4>
+                <p>3개월 / 수컷 / 말티즈</p>
+                <p>
+                  건강하게 자란 초코를 새 가족에게 분양합니다. 예방접종
+                  완료했으며, 사료와 필수용품도 함께 드려요.
+                </p>
+              </div>
+            </div>
+            <div class="adopt-item">
+              <img src="images/adoptImg/iloveimg-resized/european-shorthair-8601492_1920.jpg" alt="분양 고양이 1" />
+              <div class="adopt-content">
+                <h4>미미</h4>
+                <p>2개월 / 암컷 / 러시안 블루</p>
+                <p>
+                  귀여운 미미를 책임질 수 있는 가족을 찾습니다. 건강검진 완료,
+                  깨끗한 환경에서 자랐어요.
+                </p>
+              </div>
+            </div>
+            <!-- 추가 입양/분양 아이템들... -->
+          </div>
+          <button class="adopt-prev">&#10094;</button>
+          <button class="adopt-next">&#10095;</button>
+        </div>
+      </div>
+    </section>
+    <!-- <section id="lostPet">
+        <h2>찾아주세요</h2> -->
+    <!-- 상단 사진 / 하단 정보 텍스트 -->
+  </main>
+
+  <footer>
+    <div id="companyInfo">
+      <span id="name">대표 : 윤승현</span><br />
+      <span>연락처 : </span>
+      <a href="tel:010-0000-0000">010-1234-5999</a> <br />
+      <span>주소 : 경기도 평택시 신장동</span> <br />
+      <span>이메일 : <a href="email">getplay0131@naver.com</a></span>
+      <p id="updateStat">작업 진행중:24년도 08월 1일~</p>
+    </div>
+  </footer>
+  <script src="adopt.js"></script>
+  <script src="menuToggle.js"></script>
+  <script src="pet.js"></script>
+  <script src="mypage.js"></script>
+</body>
+
+</html>
